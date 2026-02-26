@@ -1,9 +1,12 @@
+
 import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  base: '/07-HEROES-SPA',
+  base: '/react-heroes-spa/',
   plugins: [
+    react(),
     tailwindcss(),
   ],
 });
