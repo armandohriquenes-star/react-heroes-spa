@@ -5,11 +5,13 @@ import { heroes } from "../Data/heroes";
 
 export const getHeroesByName = (name = '') => {
 
-  name.toLocaleLowerCase().trim();
+  name = name.toLocaleLowerCase().trim();
 
   if (name.length === 0) return [];
 
   return heroes.filter(
-    hero => hero.superhero.toLocaleLowerCase().includes(name)
+    hero => hero.superhero.toLocaleLowerCase().includes(name) ||
+      hero.id.toLocaleLowerCase().includes(name)
+
   );
 };

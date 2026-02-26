@@ -40,7 +40,7 @@ export const SearchPage = () => {
           <hr />
           <form onSubmit={onSearchSubmit}>
             <input type="text"
-              placeholder="Shearch a hero"
+              placeholder="Search a hero"
               className="form-control"
               name="searchText"
               autoComplete="off"

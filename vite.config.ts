@@ -2,11 +2,20 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';  // ✅ Importa el plugin
 
 export default defineConfig({
   base: '/react-heroes-spa/',
   plugins: [
     react(),
     tailwindcss(),
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'public/heroes/*.jpg',
+          dest: 'heroes'
+        }
+      ]
+    })
   ],
 });
