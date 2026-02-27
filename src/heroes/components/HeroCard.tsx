@@ -14,7 +14,7 @@ export const HeroCard = ({
   first_appearance,
   characters }: any) => {
 
-  const heroImgUrl = `${import.meta.env.BASE_URL}heroes/${id}.jpg`;
+  const heroImgUrl = `${import.meta.env.BASE_URL}heroes/${id}`;
 
   const [imgError, setImgError] = useState(false);
 
@@ -49,7 +49,7 @@ export const HeroCard = ({
                 <small className="text-muted">{first_appearance} </small>
               </p>
 
-              <Link to={`/hero/${id}`}>
+              <Link to={`${import.meta.env.BASE_URL}heroes/${id}.jpg`}>
                 Mas...
               </Link>
             </div>
