@@ -2,11 +2,10 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const CharactersByHero = ({ alter_ego, characters }: any) => {
-
   if (alter_ego === characters) return (<></>);
-
   return <p>{characters} </p>;
 };
+
 export const HeroCard = ({
   id,
   superhero,
@@ -14,7 +13,7 @@ export const HeroCard = ({
   first_appearance,
   characters }: any) => {
 
-  const heroImgUrl = `${import.meta.env.BASE_URL}heroes/${id}`;
+  const heroImgUrl = `${import.meta.env.BASE_URL}heroes/${id}.jpg`;
 
   const [imgError, setImgError] = useState(false);
 
@@ -41,15 +40,11 @@ export const HeroCard = ({
             <div className="card-body">
               <h5 className="card-title">{superhero} </h5>
               <p className="card-text"> {alter_ego}</p>
-              {/* {
-                (alter_ego !== characters) && (<p>{characters} </p>)
-              } */}
               <CharactersByHero characters={characters} alter_ego={alter_ego} />
               <p className="card-text">
                 <small className="text-muted">{first_appearance} </small>
               </p>
-
-              <Link to={`${import.meta.env.BASE_URL}heroes/${id}.jpg`}>
+              <Link to={`${import.meta.env.BASE_URL}hero/${id}`}>
                 Mas...
               </Link>
             </div>
