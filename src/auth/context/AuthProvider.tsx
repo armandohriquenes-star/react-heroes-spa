@@ -3,9 +3,7 @@ import { AuthContext } from "./AuthContext";
 import { authReducer } from "./authReducer";
 import { types } from "../types/types";
 
-// const initialState = {
-//   logged: false
-// };
+
 
 
 const init = () => {
@@ -24,6 +22,7 @@ export const AuthProvider = ({ children }: any) => {
   const login = (name = '') => {
 
     const user = { id: 'ABC', name };
+
     const action = { type: types.login, payload: user };
 
     localStorage.setItem('user', JSON.stringify(user));
@@ -32,6 +31,7 @@ export const AuthProvider = ({ children }: any) => {
 
   const logout = () => {
     localStorage.removeItem('user');
+
     const action = { type: types.logout };
     dispatch(action);
   };
